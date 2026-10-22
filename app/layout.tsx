@@ -1,5 +1,9 @@
 import type { Metadata } from "next";
 import { Courier_Prime, JetBrains_Mono, Press_Start_2P } from "next/font/google";
+import { Suspense } from "react";
+import { AuthProvider } from "./components/auth-provider";
+import { Footer } from "./components/footer";
+import { Nav } from "./components/nav";
 import "./globals.css";
 
 const pressStart = Press_Start_2P({
@@ -34,7 +38,15 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body>
         <div className="av-bg" aria-hidden />
         <div className="av-noise" aria-hidden />
-        <div className="av-root">{children}</div>
+        <AuthProvider>
+          <div className="av-root">
+            <Suspense>
+              <Nav />
+            </Suspense>
+            <main className="av-main">{children}</main>
+            <Footer />
+          </div>
+        </AuthProvider>
       </body>
     </html>
   );

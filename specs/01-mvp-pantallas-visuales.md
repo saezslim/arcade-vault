@@ -1,6 +1,6 @@
 # SPEC 01 — MVP visual de Arcade Vault (5 pantallas)
 
-> **Estado:** Aprobado
+> **Estado:** Implementado
 > **Depende de:** ninguna (el tema y las fuentes ya están en `app/globals.css` y `app/layout.tsx`)
 > **Fecha:** 2026-10-22
 > **Objetivo:** Implementar en Next.js las 5 pantallas del prototipo `references/templates/` (auth, biblioteca, detalle, reproductor, salón de la fama) como UI pura con datos ficticios y sin ningún juego real.
@@ -92,24 +92,24 @@ Convenciones:
 
 ## Criterios de aceptación
 
-- [ ] `pnpm lint` y `pnpm build` terminan sin errores.
-- [ ] Existen las rutas `/`, `/juegos/[id]`, `/juegos/[id]/jugar`, `/salon` y `/auth`; todas cargan sin errores en consola.
-- [ ] `/juegos/inexistente` y `/juegos/inexistente/jugar` muestran la página 404.
-- [ ] `/` muestra los 8 juegos; escribir "caí" deja solo CAÍDA; el chip SHOOTER deja INVASORES y ROCAS; una búsqueda sin coincidencias muestra "NO HAY RESULTADOS".
-- [ ] Hacer clic en una tarjeta o en su botón JUGAR navega a `/juegos/<id>`.
-- [ ] El detalle muestra título, descripción larga, 4 tags, Partidas / Mejor global / Dificultad y 10 filas de leaderboard con las 3 primeras destacadas; "JUGAR AHORA" lleva a `/juegos/<id>/jugar` y "VOLVER AL VAULT" a `/`.
-- [ ] El leaderboard de un mismo juego es idéntico en cada recarga (datos deterministas).
+- [x] `pnpm lint` y `pnpm build` terminan sin errores.
+- [x] Existen las rutas `/`, `/juegos/[id]`, `/juegos/[id]/jugar`, `/salon` y `/auth`; todas cargan sin errores en consola.
+- [x] `/juegos/inexistente` y `/juegos/inexistente/jugar` muestran la página 404.
+- [x] `/` muestra los 8 juegos; escribir "caí" deja solo CAÍDA; el chip SHOOTER deja INVASORES y ROCAS; una búsqueda sin coincidencias muestra "NO HAY RESULTADOS".
+- [x] Hacer clic en una tarjeta o en su botón JUGAR navega a `/juegos/<id>`.
+- [x] El detalle muestra título, descripción larga, 4 tags, Partidas / Mejor global / Dificultad y 10 filas de leaderboard con las 3 primeras destacadas; "JUGAR AHORA" lleva a `/juegos/<id>/jugar` y "VOLVER AL VAULT" a `/`.
+- [x] El leaderboard de un mismo juego es idéntico en cada recarga (datos deterministas).
 - [ ] `/salon` muestra una tab por cada uno de los 8 juegos; cambiar de tab cambia podio y tabla; recargar con `?juego=caida` abre esa tab.
-- [ ] En `/auth`, la pestaña "Crear cuenta" muestra el campo de correo y "Iniciar sesión" lo oculta.
-- [ ] Enviar el formulario de `/auth` con usuario "px_kai" redirige a `/` y el nav muestra "PX_KAI"; sin usuario muestra "PLAYER1".
-- [ ] Tras iniciar sesión, recargar la página mantiene el nombre en el nav (clave `av_user`); al cerrar sesión desaparece y el nav vuelve a "Iniciar Sesión".
-- [ ] "Jugar como invitado" redirige a `/` y el nav muestra "Iniciar Sesión".
-- [ ] `/salon` muestra la fila "TU MEJOR MARCA" solo cuando hay sesión.
-- [ ] En el reproductor, la puntuación aumenta sola; PAUSA la detiene y muestra "EN PAUSA"; REANUDAR la retoma; SALIR vuelve a `/juegos/<id>`.
-- [ ] FIN abre el modal con la puntuación final; "GUARDAR PUNTUACIÓN" muestra "PUNTUACIÓN GUARDADA_"; "JUGAR DE NUEVO" reinicia puntos, vidas y nivel; "VOLVER AL VAULT" va a `/`.
-- [ ] A 390px de ancho no hay scroll horizontal; el nav muestra la hamburguesa y esta abre/cierra el panel móvil con links a Biblioteca, Salón y Auth.
-- [ ] Footer y fondo (grid/scanlines/ruido) aparecen en todas las pantallas.
-- [ ] Ninguna pantalla importa datos desde `references/`; todo viene de `app/data/`.
+- [x] En `/auth`, la pestaña "Crear cuenta" muestra el campo de correo y "Iniciar sesión" lo oculta.
+- [x] Enviar el formulario de `/auth` con usuario "px_kai" redirige a `/` y el nav muestra "PX_KAI"; sin usuario muestra "PLAYER1".
+- [x] Tras iniciar sesión, recargar la página mantiene el nombre en el nav (clave `av_user`); al cerrar sesión desaparece y el nav vuelve a "Iniciar Sesión".
+- [x] "Jugar como invitado" redirige a `/` y el nav muestra "Iniciar Sesión".
+- [x] `/salon` muestra la fila "TU MEJOR MARCA" solo cuando hay sesión.
+- [x] En el reproductor, la puntuación aumenta sola; PAUSA la detiene y muestra "EN PAUSA"; REANUDAR la retoma; SALIR vuelve a `/juegos/<id>`.
+- [x] FIN abre el modal con la puntuación final; "GUARDAR PUNTUACIÓN" muestra "PUNTUACIÓN GUARDADA_"; "JUGAR DE NUEVO" reinicia puntos, vidas y nivel; "VOLVER AL VAULT" va a `/`.
+- [x] A 390px de ancho no hay scroll horizontal; el nav muestra la hamburguesa y esta abre/cierra el panel móvil con links a Biblioteca, Salón y Auth.
+- [x] Footer y fondo (grid/scanlines/ruido) aparecen en todas las pantallas.
+- [x] Ninguna pantalla importa datos desde `references/`; todo viene de `app/data/`.
 
 ## Decisiones
 
